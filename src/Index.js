@@ -15,11 +15,16 @@ form.addEventListener("submit", (event) => {
 
 function todoCreateElements(todo, index) {
   const li = document.createElement("li");
+  const btnSuppression = document.createElement("button");
+  btnSuppression.innerHTML = "Supprimer";
+  btnSuppression.addEventListener("click", (event) => {
+    supprimerTodo(index);
+  });
   li.innerHTML = `
     <span class="todo ${todo.done ? " done" : ""}  "></span>
     <p>${todo.text}</p>
-    <button>Supprimer</button>
     `;
+  li.appendChild(btnSuppression);
   return li;
 }
 
@@ -36,6 +41,10 @@ function ajoutTodo(text) {
     text,
     done: false,
   });
+}
+function supprimerTodo(index) {
+  todos.splice(index, 1);
+  todo();
 }
 
 todo();
