@@ -1,17 +1,17 @@
 import "./style.css";
 
 const ul = document.querySelector("ul");
+const form = document.querySelector("form");
+const inputForm = document.querySelector("form > input");
+const todos = [];
 
-// const todos = [
-//   {
-//     text: "1ere chose à faire",
-//     done: true,
-//   },
-//   {
-//     text: "2nde chose à faire",
-//     done: false,
-//   },
-// ];
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const value = inputForm.value;
+  inputForm.value = "";
+  ajoutTodo(value);
+  todo();
+});
 
 function todoCreateElements(todo, index) {
   const li = document.createElement("li");
@@ -29,6 +29,13 @@ function todo() {
   });
   ul.innerHTML = "";
   ul.append(...todoMap);
+}
+
+function ajoutTodo(text) {
+  todos.push({
+    text,
+    done: false,
+  });
 }
 
 todo();
