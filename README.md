@@ -11,5 +11,7 @@ Projet de ToDo list.
 
 ### Techniques :arrow_down:
 
-JavaScript vanilla.
+HTML, CSS, JavaScript vanilla.
+
+
 
