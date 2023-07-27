@@ -18,6 +18,9 @@ form.addEventListener("submit", (event) => {
 
 function todoCreateElements(todo, index) {
   const li = document.createElement("li");
+  li.addEventListener("dblclick", (event) => {
+    cocheModif(index);
+  });
   const btnSuppression = document.createElement("button");
   btnSuppression.innerHTML = "Supprimer";
   btnSuppression.className = "violet-medium";
