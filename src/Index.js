@@ -81,6 +81,9 @@ function todoModifElements(todo, index) {
   });
 
   li.append(input, btnAnnul, btnModif);
+  setTimeout(() => {
+    input.focus(), 0;
+  });
   return li;
 }
 
