@@ -20,8 +20,10 @@ function todoCreateElements(todo, index) {
   const li = document.createElement("li");
   const btnSuppression = document.createElement("button");
   btnSuppression.innerHTML = "Supprimer";
+  btnSuppression.className = "violet-medium";
   const btnModif = document.createElement("button");
   btnModif.innerHTML = "Modifier";
+  btnModif.className = "violet-clair";
   btnModif.addEventListener("click", (event) => {
     event.stopPropagation();
     cocheModif(index);
@@ -47,18 +49,29 @@ function todoModifElements(todo, index) {
   const input = document.createElement("input");
   input.type = "text";
   input.value = todo.text;
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      modifTodo(index, input);
+    }
+    if (event.key === "Escape") {
+      cocheModif(index);
+    }
+  });
   const btnAnnul = document.createElement("button");
   btnAnnul.innerHTML = "Annuler";
+  btnAnnul.className = "violet-clair";
   btnAnnul.addEventListener("click", (event) => {
     event.stopPropagation();
     cocheModif(index);
   });
   const btnModif = document.createElement("button");
   btnModif.innerHTML = "Confirmer";
+  btnModif.className = "violet-medium";
   btnModif.addEventListener("click", (event) => {
     event.stopPropagation();
     modifTodo(index, input);
   });
+
   li.append(input, btnAnnul, btnModif);
   return li;
 }

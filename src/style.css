@@ -61,7 +61,7 @@ li {
 }
 
 li:hover {
-  background: lightgoldenrodyellow;
+  background: #ede477;
   border-radius: 5px;
 }
 
@@ -87,4 +87,20 @@ li .done {
 
 .raye {
   text-decoration: line-through;
+}
+
+.violet-clair {
+  background: #b699ff;
+}
+
+.violet-medium {
+  background: #9877ed;
+}
+
+.violet-fonce {
+  background: #5c40a1;
+}
+
+.or {
+  background: #a19830;
 }
