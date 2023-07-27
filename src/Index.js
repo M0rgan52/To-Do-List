@@ -32,8 +32,8 @@ function todoCreateElements(todo, index) {
   });
 
   li.innerHTML = `
-    <span class="todo ${todo.done ? " done" : ""}  "></span>
-    <p>${todo.text}</p>
+    <span class="todo ${todo.done ? "done" : ""}"></span>
+    <p class="${todo.done ? "raye" : ""}"  >${todo.text}</p>
     `;
   li.addEventListener("click", (event) => {
     cocheTodo(index);

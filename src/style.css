@@ -78,3 +78,7 @@ li .todo {
 li .done {
   background: #333;
 }
+
+.raye {
+  text-decoration: line-through;
+}
