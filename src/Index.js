@@ -78,8 +78,9 @@ function todo() {
 function ajoutTodo(text) {
   text = text.trim();
   if (text) {
+    const textMaj = text.charAt(0).toUpperCase() + text.slice(1);
     todos.push({
-      text,
+      text: textMaj,
       done: false,
       modifMode: false,
     });
