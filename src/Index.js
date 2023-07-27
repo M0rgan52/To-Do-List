@@ -9,7 +9,11 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const value = inputForm.value;
   inputForm.value = "";
-  ajoutTodo(value);
+  if (value === "") {
+    alert("Votre ToDo est vide !");
+  } else {
+    ajoutTodo(value);
+  }
 });
 
 function todoCreateElements(todo, index) {
@@ -72,12 +76,15 @@ function todo() {
 }
 
 function ajoutTodo(text) {
-  todos.push({
-    text,
-    done: false,
-    modifMode: false,
-  });
-  todo();
+  text = text.trim();
+  if (text) {
+    todos.push({
+      text,
+      done: false,
+      modifMode: false,
+    });
+    todo();
+  }
 }
 
 function supprimerTodo(index) {
