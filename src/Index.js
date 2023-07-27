@@ -18,9 +18,6 @@ form.addEventListener("submit", (event) => {
 
 function todoCreateElements(todo, index) {
   const li = document.createElement("li");
-  li.addEventListener("dblclick", (event) => {
-    cocheModif(index);
-  });
   const btnSuppression = document.createElement("button");
   btnSuppression.innerHTML = "Supprimer";
   btnSuppression.className = "violet-medium";
@@ -40,8 +37,16 @@ function todoCreateElements(todo, index) {
     <span class="todo ${todo.done ? "done" : ""}"></span>
     <p class="${todo.done ? "raye" : ""}"  >${todo.text}</p>
     `;
+  let timer;
   li.addEventListener("click", (event) => {
-    cocheTodo(index);
+    if (event.detail === 1) {
+      timer = setTimeout(() => {
+        cocheTodo(index);
+      }, 200);
+    } else if (event.detail > 1) {
+      clearTimeout(timer);
+      cocheModif(index);
+    }
   });
   li.append(btnModif, btnSuppression);
   return li;
