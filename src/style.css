@@ -56,7 +56,13 @@ ul {
 li {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 0px 10px 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background: lightgoldenrodyellow;
+  border-radius: 5px;
 }
 
 li input {
